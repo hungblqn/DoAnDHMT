@@ -12,8 +12,8 @@ public class GunScript : MonoBehaviour
     public AudioClip laserSound;
     public AudioClip noAmmoSound;
 
-    private int ammo = 3000;
-    private int ammoStorage = 100000;
+    private int ammo = 100;
+    private int ammoStorage = 1000;
     private int ammoLimit;
     private float damage = 100;
     private float fireRate = 0.1f;

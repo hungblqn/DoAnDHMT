@@ -18,6 +18,7 @@ public class Zombie : MonoBehaviour
     public Slider healthBar;
 
     public GameObject healthDrop;
+    public GameObject gemDrop;
 
     private float attackCooldown = 1.0f;
 
@@ -58,9 +59,13 @@ public class Zombie : MonoBehaviour
         const int probabilityWindow = 30;
         int randomChance = generator.Next(0, 100);
 
-        if (randomChance < probabilityWindow)
+        if (randomChance < 10)
         {
-            Instantiate(healthDrop, transform.position + new Vector3(0,1,0),transform.rotation);
+            Instantiate(healthDrop, transform.position + new Vector3(1,1,0),transform.rotation);
+        }
+        if(randomChance < probabilityWindow)
+        {
+            Instantiate(gemDrop, transform.position + new Vector3(0, 1, 0), transform.rotation);
         }
     }
     private void Attack()

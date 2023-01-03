@@ -8,6 +8,7 @@ TagManager:
   - Sword
   - Enemy
   - Health
+  - Gem
   layers:
   - Default
   - TransparentFX

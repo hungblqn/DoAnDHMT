@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
@@ -12,7 +14,9 @@ public class PlayerController : MonoBehaviour
     private float movementSpeed = 10f;
     private float jumpForce = 10f;
     private float gravity = -9.81f;
-
+    private int score = 0;
+    private int winScore = 10;
+    private TextMeshProUGUI textScore;
     private Vector3 velocity;
 
     public Transform groundCheck;
@@ -25,6 +29,7 @@ public class PlayerController : MonoBehaviour
     private AudioSource footstepAS;
     void Start()
     {
+        textScore = GameObject.Find("textScore").GetComponent<TextMeshProUGUI>();
         footstepAS = GameObject.Find("FootstepAS").GetComponent<AudioSource>();
         maxHealth = characterHealth;
         
@@ -59,6 +64,12 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene(0);
         }
         if (characterHealth > maxHealth) characterHealth = maxHealth;
+        if (score == 10)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            SceneManager.LoadScene(2);
+        }
     }
     private bool isGrounded()
     {
@@ -69,6 +80,12 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Health"))
         {
             characterHealth += 50;
+            Destroy(other.gameObject);
+        }
+        if (other.gameObject.CompareTag("Gem"))
+        {
+            score++;
+            textScore.SetText("Gem: " + score+"/"+winScore);
             Destroy(other.gameObject);
         }
     }

@@ -331,7 +331,6 @@
 -r:"Library/Bee/artifacts/2000b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/2000b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/2000b0aE.dag/UnityEngine.UI.ref.dll"
-"Assets/Rotator.cs"
 "Assets/Scripts/Enemy/Target.cs"
 "Assets/Scripts/Enemy/Zombie.cs"
 "Assets/Scripts/Player/CameraController.cs"
@@ -340,11 +339,14 @@
 "Assets/Scripts/Player/PlayerController.cs"
 "Assets/Scripts/Player/Sword.cs"
 "Assets/Scripts/Player/WeaponSwitching.cs"
+"Assets/Scripts/Rotator.cs"
 "Assets/Scripts/SpawnManager.cs"
 "Assets/Scripts/UI/ButtonScript1.cs"
 "Assets/Scripts/UI/ButtonScript2.cs"
 "Assets/Scripts/UI/IngameButtonScript.cs"
+"Assets/Scripts/UI/IngameOption.cs"
 "Assets/Scripts/UI/Menu.cs"
+"Assets/Scripts/UI/MouseSensivity.cs"
 "Assets/Scripts/UpdateSky.cs"
 -langversion:9.0
 
